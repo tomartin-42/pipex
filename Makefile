@@ -11,7 +11,7 @@ INC_DIR = ./includes/
 LIBFT_DIR = ./libft/
 
 # Source files and object files
-SRC_FILES = main.c 
+SRC_FILES = main.c check.c error.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
@@ -20,8 +20,8 @@ SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 LIBFT = $(addprefix $(LIBFT_DIR), libft.a)
 
-# Libft and Minilibx linkers
-LNK  = -L $(LIBFT_DIR)
+# Libft and linkers
+LNK  = -L $(LIBFT_DIR) -L $(INC_DIR)
 
 # all rule
 all: obj $(LIBFT) $(NAME)
@@ -35,8 +35,8 @@ $(LIBFT):
  
 # Compiling
 $(NAME): $(OBJ)
-	@echo "Compilation OK!!"
 	@gcc $(OBJ) $(LNK) -lm -o $(NAME)
+	@echo "Compilation OK!!"
 	@echo "$(NAME) ready!".
 
 bonus: all
