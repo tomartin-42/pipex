@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 21:06:06 by tomartin          #+#    #+#             */
-/*   Updated: 2021/09/02 08:35:12 by tomartin         ###   ########.fr       */
+/*   Created: 2021/09/02 09:50:47 by tomartin          #+#    #+#             */
+/*   Updated: 2021/09/02 11:50:27 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "pipex.h"
 
-int	ft_strlen(const char *str)
+void	get_params(t_param *param, char **argv, char **env)
 {
-	int	a;
+	int i;
 
-	a = 0;
-	while (str[a] != '\0')
-		a++;
-	return (a);
+	i = 0;
+	param->file[0] = ft_strdup(argv[1]);
+	param->file[1] = ft_strdup(argv[4]);
+	
+	printf("%s\n", env[0]);
 }

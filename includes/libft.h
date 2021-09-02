@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 18:42:13 by tomartin          #+#    #+#             */
-/*   Updated: 2021/09/02 08:34:35 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/02 09:06:57 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 322
+#  define BUFFER_SIZE 32
 # endif
 
 # include <stdio.h>
