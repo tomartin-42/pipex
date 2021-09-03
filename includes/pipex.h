@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/03 12:15:05 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/03 17:03:55 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 # include <unistd.h>
 # include "libft.h"
 
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
-
 typedef struct s_param{
 	char	*file[2];
 	char	*cmd[2];
+	char	**cmd1;
+	char	**cmd2;
 }	t_param;
 
 void	check(int argc, char **argv);

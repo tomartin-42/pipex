@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 12:08:03 by tomartin          #+#    #+#             */
-/*   Updated: 2021/09/03 12:08:04 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/03 17:11:53 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	free_param(t_param *param)
 	free(param->file[1]);
 	free(param->cmd[0]);
 	free(param->cmd[1]);
+	free_aux(param->cmd1);
+	free_aux(param->cmd2);
 }
