@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/03 10:57:21 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/03 12:15:05 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include "libft.h"
 
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
 
 typedef struct s_param{
 	char	*file[2];
@@ -32,5 +35,6 @@ char	*get_path(char *argv, char **env);
 char	*get_correct_path(char **tem_p, char *argv);
 
 void	free_aux(char **aux_path);
+void	free_param(t_param *param);
 
 #endif 
