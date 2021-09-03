@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/03 10:24:57 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/03 11:01:28 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(int argc, char **argv, char **envp)
 	free(param.file[1]);
 	free(param.cmd[0]);
 	free(param.cmd[1]);
+	system ("leaks pipex");
 	//printf ("%s - %s\n", param.file[0], param.file[1]);
 	
 }

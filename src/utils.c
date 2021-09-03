@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 09:50:47 by tomartin          #+#    #+#             */
-/*   Updated: 2021/09/03 10:58:27 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/03 11:01:55 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ void	get_params(t_param *param, char **argv, char **env)
 		param->cmd[0] = get_path(argv[2], env);
 	else
 		param->cmd[0] = ft_strdup(argv[2]);
-	/*if(access(argv[3], X_OK) != 0)
+	if(access(argv[3], X_OK) != 0)
 		param->cmd[1] = get_path(argv[3], env);
 	else
 		param->cmd[1] = ft_strdup(argv[3]);
-*/
 }
 
 char *get_path(char *argv, char **env)
