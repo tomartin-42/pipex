@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tommy <tommy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/02 23:47:31 by tommy            ###   ########.fr       */
+/*   Updated: 2021/09/03 10:57:21 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ typedef struct s_param{
 	char	*cmd[2];
 }	t_param;
 
-void check(int argc, char **argv);
-void execut_error(char *text, int numerror);
-void get_params(t_param *param, char **argv, char **env);
+void	check(int argc, char **argv);
+void	execut_error(char *text, int numerror);
+void	get_params(t_param *param, char **argv, char **env);
 
-char *get_path(char *argv, char **env);
-char *get_correct_path(char **tem_p, char *argv);
+char	*get_path(char *argv, char **env);
+char	*get_correct_path(char **tem_p, char *argv);
+
+void	free_aux(char **aux_path);
 
 #endif 

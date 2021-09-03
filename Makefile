@@ -11,7 +11,7 @@ INC_DIR = ./includes/
 LIBFT_DIR = ./libft/
 
 # Source files and object files
-SRC_FILES = main.c check.c error.c utils.c
+SRC_FILES = main.c check.c error.c utils.c free_resource.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
@@ -35,8 +35,8 @@ $(LIBFT):
 
 # Compiling
 $(NAME): $(OBJ)
-	@echo "Compilation OK!!"
 	@gcc $(OBJ) $(LNK) -lm -o $(NAME)
+	@echo "Compilation OK!!"
 	@echo "$(NAME) ready!".
 
 bonus: all
