@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tommy <tommy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 20:39:40 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/02 19:03:42 by tommy            ###   ########.fr       */
+/*   Updated: 2021/09/04 19:08:03 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void execut_error(char *text, int numerror)
+void	execut_error(char *text, int numerror)
 {
 	printf("%s\n", text);
 	exit (numerror);

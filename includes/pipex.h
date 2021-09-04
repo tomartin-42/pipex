@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/04 18:13:57 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:25:16 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,4 @@ void	free_param(t_param *param);
 
 void	open_and_read(t_param param, int *pp);
 void	open_and_write(t_param param, int *pp);
-#endif 
+#endif
