@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/03 17:03:55 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:13:57 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 # include "libft.h"
 
 typedef struct s_param{
@@ -25,7 +26,7 @@ typedef struct s_param{
 	char	**cmd2;
 }	t_param;
 
-void	check(int argc, char **argv);
+void	check(int argc, char **argv, char **env);
 void	execut_error(char *text, int numerror);
 void	get_params(t_param *param, char **argv, char **env);
 
@@ -35,4 +36,6 @@ char	*get_correct_path(char **tem_p, char *argv);
 void	free_aux(char **aux_path);
 void	free_param(t_param *param);
 
+void	open_and_read(t_param param, int *pp);
+void	open_and_write(t_param param, int *pp);
 #endif 
