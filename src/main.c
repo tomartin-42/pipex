@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/04 19:07:10 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/04 19:13:56 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ static void	parent_proces(t_param param, int *pp, char **env)
 
 	pid = fork();
 	if (pid < 0)
+	{
 		perror("Error:");
+		exit(2);
+	}
 	else if (pid == 0)
 		child2_proces(param, pp, env);
 	else
