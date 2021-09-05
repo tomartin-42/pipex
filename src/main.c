@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/05 14:09:11 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/05 20:24:12 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static void	child1_proces(t_param param, int *pp, char **env)
 	close(fd);
 	dup2(pp[1], 1);
 	close (pp[1]);
-	execve(param.cmd[0], param.cmd1, env);
+	if(-1 == execve(param.cmd[0], param.cmd1, env))
+		perror("Error");
 }
 
 static void	child2_proces(t_param param, int *pp, char **env)
@@ -38,14 +39,15 @@ static void	child2_proces(t_param param, int *pp, char **env)
 	fd = open(param.file[1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
 	{
-		perror("Error: ");
+		perror("Error");
 		exit(2);
 	}
 	dup2(fd, 1);
 	close(fd);
 	dup2(pp[0], 0);
 	close(pp[0]);
-	execve(param.cmd[1], param.cmd2, env);
+	if(-1 == execve(param.cmd[1], param.cmd2, env))
+		perror("Error");
 }
 
 static void	parent_proces(t_param param, int *pp, char **env)
@@ -55,7 +57,7 @@ static void	parent_proces(t_param param, int *pp, char **env)
 	pid = fork();
 	if (pid < 0)
 	{
-		perror("Error:");
+		perror("Error");
 		exit(2);
 	}
 	else if (pid == 0)
@@ -85,5 +87,4 @@ int	main(int argc, char **argv, char **envp)
 		parent_proces(param, pp, envp);
 	waitpid(-1, NULL, 0);
 	waitpid(-1, NULL, 0);
-	system ("leaks pipex");
 }
