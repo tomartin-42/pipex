@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/04 18:25:16 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/05 20:37:33 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_param{
 }	t_param;
 
 void	check(int argc, char **argv, char **env);
+void	command_not_found_error(char **cmd);
 void	execut_error(char *text, int numerror);
 void	get_params(t_param *param, char **argv, char **env);
 

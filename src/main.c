@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/05 20:24:12 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/05 20:40:51 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	child1_proces(t_param param, int *pp, char **env)
 	dup2(pp[1], 1);
 	close (pp[1]);
 	if(-1 == execve(param.cmd[0], param.cmd1, env))
-		perror("Error");
+		command_not_found_error(param.cmd1);
 }
 
 static void	child2_proces(t_param param, int *pp, char **env)
@@ -47,7 +47,7 @@ static void	child2_proces(t_param param, int *pp, char **env)
 	dup2(pp[0], 0);
 	close(pp[0]);
 	if(-1 == execve(param.cmd[1], param.cmd2, env))
-		perror("Error");
+		command_not_found_error(param.cmd2);
 }
 
 static void	parent_proces(t_param param, int *pp, char **env)

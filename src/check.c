@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 20:37:21 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/04 19:19:37 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/05 20:36:04 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,13 @@ void	check(int argc, char **argv, char **env)
 	printf("%s\n", argv[0]);
 	if (!env)
 		execut_error("Missing PATH", 2);
+}
+
+void	command_not_found_error(char **cmd)
+{
+	ft_putstr_fd("pipex: ", 2);
+	ft_putstr_fd(cmd[0], 2);
+	ft_putstr_fd(": ", 2);
+	ft_putstr_fd("command not found\n", 2);
+	exit(2);
 }
