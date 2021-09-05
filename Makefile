@@ -6,7 +6,7 @@
 #    By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 19:11:19 by tomartin          #+#    #+#              #
-#    Updated: 2021/09/04 19:11:21 by tomartin         ###   ########.fr        #
+#    Updated: 2021/09/05 14:10:56 by tomartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ $(LIBFT):
 
 # Compiling
 $(NAME): $(OBJ)
-	@gcc $(OBJ) $(LNK) -lm -o $(NAME)
+	@gcc $(OBJ) $(LNK) $(FLAGS) -lm -o $(NAME)
 	@echo "Compilation OK!!"
 	@echo "$(NAME) ready!".
 
