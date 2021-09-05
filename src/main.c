@@ -77,6 +77,7 @@ int	main(int argc, char **argv, char **envp)
 	get_params(&param, argv, envp);
 	pipe(pp);
 	pid = fork ();
+	printf("cmd1= %s\ncmd2= %s\n", param.cmd[0], param.cmd[1]);
 	if (pid < 0)
 		execut_error("Error: in fork()", 2);
 	else if (pid == 0)
