@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/04 19:13:56 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/05 14:09:11 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int	main(int argc, char **argv, char **envp)
 	get_params(&param, argv, envp);
 	pipe(pp);
 	pid = fork ();
-	printf("cmd1= %s\ncmd2= %s\n", param.cmd[0], param.cmd[1]);
 	if (pid < 0)
 		execut_error("Error: in fork()", 2);
 	else if (pid == 0)
@@ -86,4 +85,5 @@ int	main(int argc, char **argv, char **envp)
 		parent_proces(param, pp, envp);
 	waitpid(-1, NULL, 0);
 	waitpid(-1, NULL, 0);
+	system ("leaks pipex");
 }

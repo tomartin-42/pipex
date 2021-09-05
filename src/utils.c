@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 09:50:47 by tomartin          #+#    #+#             */
-/*   Updated: 2021/09/04 19:05:26 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/05 14:09:02 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,20 @@ void	get_params(t_param *param, char **argv, char **env)
 	param->cmd2 = ft_split(argv[3], ' ');
 	param->cmd[0] = ft_strdup(param->cmd1[0]);
 	param->cmd[1] = ft_strdup(param->cmd2[0]);
-	printf("*cmd1= %s\n*cmd2= %s\n", param->cmd[0], param->cmd[1]);
-	printf("*cmd1= %s\n*cmd2= %s\n", param->cmd1[0], param->cmd2[0]);
-	if (access(param->cmd1[0], X_OK) == 0)
+	if (access(param->cmd1[0], X_OK) != 0)
+	{
+		free(param->cmd[0]);
 		param->cmd[0] = get_path(param->cmd1[0], env);
-	else
-		param->cmd[0] = ft_strdup(argv[2]);
-	if (access(param->cmd2[0], X_OK) == 0)
+	}
+	//else
+	//	param->cmd[0] = ft_strdup(param->cmd1[0]);
+	if (access(param->cmd2[0], X_OK) != 0)
+	{
+		free(param->cmd[1]);
 		param->cmd[1] = get_path(param->cmd2[0], env);
-	else
-		param->cmd[1] = ft_strdup(argv[3]);
-	printf("**cmd1= %s\n**cmd2= %s\n", param->cmd[0], param->cmd[1]);
-	printf("**cmd1= %s\n**cmd2= %s\n", param->cmd1[0], param->cmd2[0]);
+	}
+	//else
+	//	param->cmd[1] = ft_strdup(param->cmd2[0]);
 }
 
 char	*get_path(char *argv, char **env)
