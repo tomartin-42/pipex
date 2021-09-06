@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/05 20:40:51 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/06 07:29:28 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	child1_proces(t_param param, int *pp, char **env)
 	close(fd);
 	dup2(pp[1], 1);
 	close (pp[1]);
-	if(-1 == execve(param.cmd[0], param.cmd1, env))
+	if (-1 == execve(param.cmd[0], param.cmd1, env))
 		command_not_found_error(param.cmd1);
 }
 
@@ -46,7 +46,7 @@ static void	child2_proces(t_param param, int *pp, char **env)
 	close(fd);
 	dup2(pp[0], 0);
 	close(pp[0]);
-	if(-1 == execve(param.cmd[1], param.cmd2, env))
+	if (-1 == execve(param.cmd[1], param.cmd2, env))
 		command_not_found_error(param.cmd2);
 }
 
@@ -87,4 +87,5 @@ int	main(int argc, char **argv, char **envp)
 		parent_proces(param, pp, envp);
 	waitpid(-1, NULL, 0);
 	waitpid(-1, NULL, 0);
+	system("leaks pipex");
 }

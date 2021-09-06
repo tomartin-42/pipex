@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 09:50:47 by tomartin          #+#    #+#             */
-/*   Updated: 2021/09/05 20:10:26 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/06 07:26:46 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,5 @@ char	*get_correct_path(char **aux_path, char *argv)
 		free(t_path);
 		i++;
 	}
-/*	if (aux_path[i] == NULL)
-	{
-		perror("Error: ");
-		exit(2);
-	}*/
-	return (t_path); 
+	return (t_path);
 }

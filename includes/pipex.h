@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:33 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/05 20:37:33 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/06 07:18:55 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <string.h>
 # include <sys/types.h>
 # include <sys/wait.h>
 # include "libft.h"
