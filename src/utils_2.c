@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 09:02:22 by tomartin          #+#    #+#             */
-/*   Updated: 2021/05/29 17:57:30 by tomartin         ###   ########.fr       */
+/*   Created: 2021/09/06 07:43:11 by tomartin          #+#    #+#             */
+/*   Updated: 2021/09/06 07:45:55 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "pipex.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	while (*s)
+		write (fd, s++, 1);
+}
 
 static int	ft_tableword(const char *s, char c)
 {
