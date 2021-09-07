@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:34:29 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/06 07:29:28 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/07 10:57:17 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static void	parent_proces(t_param param, int *pp, char **env)
 		close(pp[0]);
 		close(pp[1]);
 	}
+	waitpid(pid, NULL, 0);
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -85,7 +86,5 @@ int	main(int argc, char **argv, char **envp)
 		child1_proces(param, pp, envp);
 	else
 		parent_proces(param, pp, envp);
-	waitpid(-1, NULL, 0);
-	waitpid(-1, NULL, 0);
-	system("leaks pipex");
+	waitpid(pid, NULL, 0);
 }

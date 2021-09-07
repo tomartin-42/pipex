@@ -6,7 +6,7 @@
 /*   By: tomartin <tomartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 20:37:21 by tommy             #+#    #+#             */
-/*   Updated: 2021/09/06 07:47:55 by tomartin         ###   ########.fr       */
+/*   Updated: 2021/09/07 10:49:19 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check(int argc, char **argv, char **env)
 	if (argc != 5 || !ft_strlen(argv[2]) || !ft_strlen(argv[3]))
 		execut_error("Error: please, \"./pipex in_f cmd1 cmd2 out_f\"\n", 8);
 	printf("%s\n", argv[0]);
-	if (!env)
+	if (*env == NULL)
 		execut_error("Missing PATH", 2);
 }
 
